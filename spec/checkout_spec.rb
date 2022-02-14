@@ -2,7 +2,14 @@ require_relative "../lib/checkout.rb"
 
 describe Checkout do
   subject(:checkout) { described_class.new(rules) }
-  let(:rules) { nil }
+  let(:rules) {
+    [
+      {item: 'A', price: 50, spu: 3, spu_price: 130},
+      {item: 'B', price: 30, spu: 2, spu_price: 45},
+      {item: 'C', price: 20},
+      {item: 'D', price: 15}
+    ]
+  }
 
   it 'tests are working' do
     expect(1).to eq 1
